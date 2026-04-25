@@ -12,13 +12,13 @@ const ProfileHeader = ({ name, designation, businessName , email }: ProfileHeade
   return (
     <div className="flex flex-col items-center gap-2">
       {/* Avatar */}
-      <div className="w-20 h-20 shadow-xl  rounded-full overflow-hidden shadow-sm">
-        <img
-          src={avatarImg}
-          alt={name}
-          className="w-full h-full object-cover"
-        />
-      </div>
+   <div className="w-24 h-24 rounded-full overflow-hidden shadow-xl">
+  <img
+    src={avatarImg}
+    alt={name}
+    className="w-full h-full object-cover object-[center_10%]"
+  />
+</div>
 
       {/* Profile info */}
       <div className="text-center">

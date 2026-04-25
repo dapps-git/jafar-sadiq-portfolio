@@ -20,10 +20,10 @@ const socialGroups: SocialGroup[] = [
         url: "https://www.skiolo.com",
         icon: <Globe className="w-4 h-4" />,
       },
-      {
-        platform: "LinkedIn",
-        url: "https://www.linkedin.com/in",
-        icon: <Linkedin className="w-4 h-4" />,
+     {
+        platform: "You Tube",
+        url: "https://www.youtube.com/@skiolo_career_academy",
+        icon: <Youtube className="w-4 h-4" />,
       },
       {
         platform: "Facebook",
@@ -44,7 +44,7 @@ const socialGroups: SocialGroup[] = [
     links: [
       {
         platform: "You Tube",
-        url: "https://youtube.com/@jafarsadiq9792?si=ZlzMW-K2m53nZ_RZ",
+        url: "https://www.youtube.com/@jafar_puliyakkode",
         icon: <Youtube className="w-4 h-4" />,
       },
       {
