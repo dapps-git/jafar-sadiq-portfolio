@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { createPortal } from "react-dom";
 import { CheckCircle, Download, X, Images, ChevronLeft, ChevronRight } from "lucide-react";
 import avatarImg from "@/assets/avatar.jpg";
@@ -18,6 +18,11 @@ const ProfileHeader = ({ name, designation }: ProfileHeaderProps) => {
   const [lightbox, setLightbox] = useState<null | "avatar" | "gallery">(null);
   const [idx, setIdx]           = useState(0);
   const [busy, setBusy]         = useState(false);
+  const [imgLoaded, setImgLoaded] = useState(false);
+
+  useEffect(() => {
+    setImgLoaded(false);
+  }, [idx, lightbox]);
 
   const download = async (src: string, filename: string) => {
     setBusy(true);
@@ -71,10 +76,7 @@ const ProfileHeader = ({ name, designation }: ProfileHeaderProps) => {
 
         {/* Name + designation */}
         <div className="text-center mt-1">
-          <div className="flex items-center justify-center gap-1.5">
-            <h1 className="text-[17px] font-bold text-white tracking-tight">{name}</h1>
-            <CheckCircle className="w-4 h-4 text-white fill-white shrink-0" />
-          </div>
+          <h1 className="text-[17px] font-bold text-white tracking-tight">{name}</h1>
           <p className="text-[11px] font-medium text-neutral-400 mt-1.5 bg-white/5 border border-white/10 px-3 py-1 rounded-md inline-block tracking-wide">
             {designation}
           </p>
@@ -107,11 +109,17 @@ const ProfileHeader = ({ name, designation }: ProfileHeaderProps) => {
             {lightbox === "avatar" ? (
               /* Single profile photo view */
               <div className="flex flex-col items-center gap-4 w-full">
-                <div className="w-full aspect-[4/5] bg-black rounded overflow-hidden border border-white/10 flex items-center justify-center">
+                <div className="w-full aspect-[4/5] bg-black rounded overflow-hidden border border-white/10 flex items-center justify-center relative">
+                  {!imgLoaded && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-neutral-950/90 z-10">
+                      <div className="w-8 h-8 rounded-full border border-white/10 border-t-white animate-spin" />
+                    </div>
+                  )}
                   <img
                     src={avatarImg}
                     alt={name}
                     className="w-full h-full object-contain"
+                    onLoad={() => setImgLoaded(true)}
                   />
                 </div>
                 <span className="text-white font-semibold text-xs tracking-wide">{name}</span>
@@ -129,11 +137,17 @@ const ProfileHeader = ({ name, designation }: ProfileHeaderProps) => {
               <div className="flex flex-col items-center gap-4 w-full">
                 {/* Image frame */}
                 <div className="relative w-full aspect-[4/5] bg-black rounded overflow-hidden flex items-center justify-center border border-white/10">
+                  {!imgLoaded && (
+                    <div className="absolute inset-0 flex items-center justify-center bg-neutral-950/90 z-10">
+                      <div className="w-8 h-8 rounded-full border border-white/10 border-t-white animate-spin" />
+                    </div>
+                  )}
                   <img
                     key={idx}
                     src={galleryImages[idx].url}
                     alt={galleryImages[idx].label}
                     className="w-full h-full object-contain"
+                    onLoad={() => setImgLoaded(true)}
                   />
                   {/* Prev / Next navigation overlays */}
                   <button

@@ -22,23 +22,23 @@ const PhoneNumbers = ({ phones }: PhoneNumbersProps) => {
             <span className="text-sm font-bold text-white mt-0.5">{phone.number}</span>
           </div>
           <div className="flex items-center gap-2">
-            {/* WhatsApp - keeps vibrant green brand color for excellent UX */}
+            {/* WhatsApp - styled cleanly matching the social media icon style */}
             <a
               href={`https://wa.me/${phone.number.replace(/[^0-9]/g, "")}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center w-9 h-9 rounded bg-[#25D366] text-white hover:bg-[#20ba5a] transition-all hover:scale-105 shadow-sm"
+              className="flex items-center justify-center w-7 h-7 rounded text-neutral-400 hover:text-white hover:bg-white/10 border border-transparent hover:border-white/10 transition-all hover:scale-110"
               aria-label={`WhatsApp ${phone.label}`}
             >
-              <MessageCircle className="w-4 h-4 fill-white" />
+              <MessageCircle className="w-4 h-4" />
             </a>
-            {/* Call button - classy business-style silver/white design */}
+            {/* Call - styled cleanly matching the social media icon style */}
             <a
               href={`tel:${phone.number.replace(/[^0-9+]/g, "")}`}
-              className="flex items-center justify-center w-9 h-9 rounded bg-white/5 border border-white/25 text-white hover:bg-white hover:text-black transition-all hover:scale-105 shadow-sm"
+              className="flex items-center justify-center w-7 h-7 rounded text-neutral-400 hover:text-white hover:bg-white/10 border border-transparent hover:border-white/10 transition-all hover:scale-110"
               aria-label={`Call ${phone.label}`}
             >
-              <Phone className="w-4 h-4 fill-white hover:fill-black" />
+              <Phone className="w-4 h-4" />
             </a>
           </div>
         </div>

@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import ProfileHeader from "@/components/ProfileHeader";
 import PhoneNumbers from "@/components/PhoneNumbers";
 import SocialMediaGroups from "@/components/SocialMediaGroups";
@@ -12,22 +13,39 @@ const phones = [
 const descriptionText =
   "A dedicated mentor and career guidance professional with extensive experience in student counselling,Psychometric assessment interpretation, leadership development, and educational consulting. Actively associated with academic, social, and humanitarian organizations across Kerala in various leadership and advisory roles.";
 
-const bubbles = [
-  { size: 40, left: "5%", delay: "0s", duration: "14s" },
-  { size: 25, left: "15%", delay: "2s", duration: "18s" },
-  { size: 60, left: "25%", delay: "4s", duration: "16s" },
-  { size: 30, left: "40%", delay: "1s", duration: "20s" },
-  { size: 50, left: "55%", delay: "6s", duration: "15s" },
-  { size: 20, left: "70%", delay: "3s", duration: "22s" },
-  { size: 45, left: "80%", delay: "8s", duration: "17s" },
-  { size: 35, left: "92%", delay: "5s", duration: "19s" },
-  { size: 55, left: "12%", delay: "7s", duration: "21s" },
-  { size: 30, left: "62%", delay: "9s", duration: "13s" },
-  { size: 40, left: "48%", delay: "11s", duration: "17s" },
-  { size: 25, left: "85%", delay: "10s", duration: "15s" },
+// Tiny slow-drifting gold/silver dust specks — premium, classy, standard
+const dustParticles = [
+  { size: 3, left: "5%",  delay: "0s",  duration: "28s" },
+  { size: 2, left: "14%", delay: "5s",  duration: "34s" },
+  { size: 4, left: "23%", delay: "9s",  duration: "30s" },
+  { size: 2, left: "35%", delay: "2s",  duration: "38s" },
+  { size: 3, left: "47%", delay: "14s", duration: "26s" },
+  { size: 2, left: "58%", delay: "7s",  duration: "32s" },
+  { size: 4, left: "68%", delay: "11s", duration: "28s" },
+  { size: 2, left: "77%", delay: "3s",  duration: "36s" },
+  { size: 3, left: "88%", delay: "17s", duration: "29s" },
+  { size: 2, left: "96%", delay: "6s",  duration: "33s" },
+  { size: 3, left: "42%", delay: "20s", duration: "31s" },
+  { size: 2, left: "72%", delay: "13s", duration: "27s" },
+  { size: 4, left: "8%",  delay: "24s", duration: "35s" },
+  { size: 2, left: "54%", delay: "18s", duration: "30s" },
+  { size: 3, left: "82%", delay: "8s",  duration: "37s" },
 ];
 
 const Index = () => {
+  useEffect(() => {
+    // Preload large gallery images silently in background right after render
+    const imagesToPreload = [
+      "/JAHFAR.jpg.jpeg",
+      "/JAHFAR%20%20%20%20.jpg.jpeg",
+      "/Jahfar%20Sir.png"
+    ];
+    imagesToPreload.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+  }, []);
+
   return (
     <div className="animated-bg min-h-screen w-full relative flex flex-col items-center justify-start overflow-hidden">
       {/* Animated floating orbs (Luxurious champagne/silver/gold soft shimmers) */}
@@ -35,18 +53,18 @@ const Index = () => {
       <div className="orb-2 absolute bottom-[-10%] right-[-10%] w-[380px] h-[380px] bg-white/5 rounded-full pointer-events-none" />
       <div className="orb-3 absolute top-[35%] right-[5%] w-[260px] h-[260px] bg-amber-600/5 rounded-full pointer-events-none" />
 
-      {/* Dynamic Rising Bubbles Effect */}
+      {/* Slow-Drifting Gold/Silver Dust Particle Effect */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
-        {bubbles.map((b, idx) => (
+        {dustParticles.map((p, idx) => (
           <div
             key={idx}
-            className="bubble"
+            className="dust-particle"
             style={{
-              width: `${b.size}px`,
-              height: `${b.size}px`,
-              left: b.left,
-              animationDelay: b.delay,
-              animationDuration: b.duration,
+              width: `${p.size}px`,
+              height: `${p.size}px`,
+              left: p.left,
+              animationDelay: p.delay,
+              animationDuration: p.duration,
             }}
           />
         ))}
