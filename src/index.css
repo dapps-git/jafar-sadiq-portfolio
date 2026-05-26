@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,66 +6,66 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 12%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 0 0% 12%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 12%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 0 0% 12%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 4%;
 
-    --secondary: 0 0% 94%;
-    --secondary-foreground: 0 0% 12%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 0 0% 94%;
-    --muted-foreground: 0 0% 45%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
 
-    --accent: 0 0% 94%;
-    --accent-foreground: 0 0% 12%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 100%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 0 0% 90%;
-    --input: 0 0% 90%;
-    --ring: 0 0% 12%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 80%;
 
-    --radius: 0.5rem;
+    --radius: 0.375rem;
 
-    --link-bg: 0 0% 100%;
-    --link-border: 0 0% 88%;
-    --link-hover: 0 0% 96%;
-    --verified: 210 100% 50%;
+    --link-bg: 0 0% 10%;
+    --link-border: 0 0% 18%;
+    --link-hover: 0 0% 14%;
+    --verified: 210 100% 65%;
   }
 
   .dark {
-    --background: 0 0% 8%;
-    --foreground: 0 0% 95%;
-    --card: 0 0% 12%;
-    --card-foreground: 0 0% 95%;
-    --popover: 0 0% 12%;
-    --popover-foreground: 0 0% 95%;
-    --primary: 0 0% 95%;
-    --primary-foreground: 0 0% 8%;
-    --secondary: 0 0% 16%;
-    --secondary-foreground: 0 0% 95%;
-    --muted: 0 0% 16%;
-    --muted-foreground: 0 0% 60%;
-    --accent: 0 0% 16%;
-    --accent-foreground: 0 0% 95%;
+    --background: 0 0% 4%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 4%;
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 65%;
+    --accent: 0 0% 12%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 95%;
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 18%;
+    --input: 0 0% 18%;
     --ring: 0 0% 80%;
-    --link-bg: 0 0% 14%;
-    --link-border: 0 0% 22%;
-    --link-hover: 0 0% 18%;
-    --verified: 210 100% 60%;
+    --link-bg: 0 0% 10%;
+    --link-border: 0 0% 18%;
+    --link-hover: 0 0% 14%;
+    --verified: 210 100% 65%;
   }
 }
 
@@ -75,22 +75,23 @@
   }
 
   html, body {
-    @apply overflow-x-hidden w-full;
+    @apply overflow-x-hidden w-full m-0 p-0 bg-[#040404];
   }
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #040404;
   }
 }
 
-/* === Animated Light Sky Blue Theme === */
+/* === Animated Black Marble Theme === */
 @keyframes float-orb-1 {
   0%, 100% {
     transform: translate(0px, 0px) scale(1);
   }
   50% {
-    transform: translate(40px, -50px) scale(1.15);
+    transform: translate(30px, -40px) scale(1.1);
   }
 }
 @keyframes float-orb-2 {
@@ -98,7 +99,7 @@
     transform: translate(0px, 0px) scale(1);
   }
   50% {
-    transform: translate(-50px, 40px) scale(1.2);
+    transform: translate(-40px, 30px) scale(1.15);
   }
 }
 @keyframes float-orb-3 {
@@ -106,7 +107,7 @@
     transform: translate(0px, 0px) scale(1);
   }
   50% {
-    transform: translate(30px, 30px) scale(0.9);
+    transform: translate(25px, 25px) scale(0.95);
   }
 }
 @keyframes sky-flow {
@@ -122,43 +123,63 @@
 }
 
 .animated-bg {
-  background: linear-gradient(135deg, #fff1f2, #f5e6fa, #e0f2fe, #bae6fd, #fff1f2);
+  background: linear-gradient(135deg, #050505, #111111, #080808, #181818, #050505);
   background-size: 300% 300%;
-  animation: sky-flow 12s ease-in-out infinite;
+  animation: sky-flow 22s ease-in-out infinite;
   position: relative;
-  transition: background 1s ease;
+  min-height: 100vh;
+  width: 100%;
+}
+
+/* Handcrafted organic marble veins overlay */
+.animated-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0.08; /* subtle and elegant */
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 1200'%3E%3Cpath d='M0,150 Q300,120 450,280 T900,180 T1200,350 M0,600 Q250,550 500,750 T1000,550 T1200,800 M200,0 Q350,400 250,700 T550,1200 M800,0 Q950,450 850,750 T1150,1200' fill='none' stroke='%23ffffff' stroke-width='1.5' opacity='0.7'/%3E%3Cpath d='M50,100 Q200,250 350,150 T750,400 T1150,200 M100,800 Q400,700 600,900 T1100,750' fill='none' stroke='%23ffffff' stroke-width='0.8' opacity='0.4'/%3E%3C/svg%3E");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 0;
 }
 
 .orb-1 {
   animation: float-orb-1 14s ease-in-out infinite;
-  filter: blur(90px);
+  filter: blur(120px);
   will-change: transform;
+  opacity: 0.035;
+  background-color: #fef3c7; /* amber-100 */
 }
 .orb-2 {
   animation: float-orb-2 18s ease-in-out infinite;
-  filter: blur(90px);
+  filter: blur(120px);
   will-change: transform;
+  opacity: 0.045;
+  background-color: #ffffff;
 }
 .orb-3 {
   animation: float-orb-3 22s ease-in-out infinite;
-  filter: blur(90px);
+  filter: blur(120px);
   will-change: transform;
+  opacity: 0.025;
+  background-color: #d97706; /* amber-600 */
 }
 
-/* === Rising Bubbles Particle Animation === */
+/* === Rising Bubbles Particle Animation (Classy Micro-pearls) === */
 @keyframes rise-bubble {
   0% {
     transform: translateY(20vh) scale(0.5);
     opacity: 0;
   }
   15% {
-    opacity: 0.6;
+    opacity: 0.35;
   }
   90% {
-    opacity: 0.4;
+    opacity: 0.2;
   }
   100% {
-    transform: translateY(-120vh) scale(1.1);
+    transform: translateY(-120vh) scale(1);
     opacity: 0;
   }
 }
@@ -168,16 +189,16 @@
     margin-left: 0px;
   }
   50% {
-    margin-left: 25px;
+    margin-left: 15px;
   }
 }
 
 .bubble {
   position: absolute;
   bottom: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7) 0%, rgba(186, 230, 253, 0.4) 60%, rgba(147, 197, 253, 0.25) 100%);
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
   border-radius: 50%;
-  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.6), 0 4px 10px rgba(147, 197, 253, 0.2);
+  box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.15), 0 2px 6px rgba(255, 255, 255, 0.03);
   pointer-events: none;
   animation: rise-bubble 15s linear infinite, bubble-sway 4s ease-in-out infinite;
   will-change: transform, opacity;
@@ -187,7 +208,7 @@
 @keyframes card-entrance {
   0% {
     opacity: 0;
-    transform: translateY(25px) scale(0.97);
+    transform: translateY(15px) scale(0.98);
   }
   100% {
     opacity: 1;
@@ -197,14 +218,14 @@
 
 .animate-entrance {
   opacity: 0;
-  animation: card-entrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  animation: card-entrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.delay-1 { animation-delay: 100ms; }
-.delay-2 { animation-delay: 250ms; }
-.delay-3 { animation-delay: 400ms; }
-.delay-4 { animation-delay: 550ms; }
-.delay-5 { animation-delay: 700ms; }
+.delay-1 { animation-delay: 80ms; }
+.delay-2 { animation-delay: 180ms; }
+.delay-3 { animation-delay: 280ms; }
+.delay-4 { animation-delay: 380ms; }
+.delay-5 { animation-delay: 480ms; }
 
 
 

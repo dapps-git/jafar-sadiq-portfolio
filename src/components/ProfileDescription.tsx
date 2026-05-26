@@ -6,44 +6,18 @@ interface ProfileDescriptionProps {
 }
 
 const ProfileDescription = ({ description }: ProfileDescriptionProps) => {
-  const [isExpanded, setIsExpanded] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   return (
-    <div className="w-full rounded-xl border border-slate-100 bg-white shadow-sm px-4 py-3.5 transition-all">
-      <div className="relative overflow-hidden transition-all duration-300">
-        <p
-          className={`text-sm text-slate-600 leading-relaxed font-normal transition-all duration-300 ${
-            isExpanded ? "" : "line-clamp-2"
-          }`}
-        >
-          {description}
-        </p>
-
-        {/* Fade-out gradient for collapsed state */}
-        {!isExpanded && (
-          <div
-            className="absolute bottom-0 left-0 right-0 h-5 pointer-events-none"
-            style={{
-              background:
-                "linear-gradient(to top, rgba(255,255,255,0.95), transparent)",
-            }}
-          />
-        )}
-      </div>
-
+    <div className="w-full bg-neutral-900/70 border border-white/10 rounded-lg px-4 py-3.5 shadow-lg backdrop-blur-sm">
+      <p className={`text-[12px] text-neutral-300 leading-relaxed font-medium transition-all duration-300 ${expanded ? "" : "line-clamp-2"}`}>
+        {description}
+      </p>
       <button
-        onClick={() => setIsExpanded(!isExpanded)}
-        className="mt-2 flex items-center justify-center gap-1 w-full text-xs font-semibold text-blue-600 hover:text-blue-700 transition-colors py-1.5 rounded-lg hover:bg-slate-50 border border-transparent hover:border-slate-100"
+        onClick={() => setExpanded(!expanded)}
+        className="mt-2 flex items-center gap-0.5 text-[10px] font-bold text-white hover:text-neutral-200 uppercase tracking-widest transition-colors"
       >
-        {isExpanded ? (
-          <>
-            Show Less <ChevronUp className="w-3.5 h-3.5" />
-          </>
-        ) : (
-          <>
-            Read More <ChevronDown className="w-3.5 h-3.5" />
-          </>
-        )}
+        {expanded ? <>Show Less <ChevronUp className="w-3.5 h-3.5" /></> : <>Read More <ChevronDown className="w-3.5 h-3.5" /></>}
       </button>
     </div>
   );

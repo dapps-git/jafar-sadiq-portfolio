@@ -37,44 +37,24 @@ const credentials: CredentialItem[] = [
 ];
 
 const getIcon = (category: string) => {
+  const iconClass = "w-4 h-4 text-neutral-200";
   switch (category) {
     case "counselor":
-      return <Compass className="w-4 h-4 text-emerald-600" />;
+      return <Compass className={iconClass} />;
     case "board":
-      return <Users className="w-4 h-4 text-indigo-600" />;
+      return <Users className={iconClass} />;
     case "academic":
-      return <GraduationCap className="w-4 h-4 text-blue-600" />;
+      return <GraduationCap className={iconClass} />;
     case "management":
-      return <Building className="w-4 h-4 text-amber-600" />;
+      return <Building className={iconClass} />;
     case "expert":
-      return <LineChart className="w-4 h-4 text-violet-600" />;
+      return <LineChart className={iconClass} />;
     case "foundation":
-      return <Heart className="w-4 h-4 text-rose-600" />;
+      return <Heart className={iconClass} />;
     case "state":
-      return <Shield className="w-4 h-4 text-sky-600" />;
+      return <Shield className={iconClass} />;
     default:
-      return <Briefcase className="w-4 h-4 text-slate-600" />;
-  }
-};
-
-const getBgColor = (category: string) => {
-  switch (category) {
-    case "counselor":
-      return "bg-emerald-50 border-emerald-100";
-    case "board":
-      return "bg-indigo-50 border-indigo-100";
-    case "academic":
-      return "bg-blue-50 border-blue-100";
-    case "management":
-      return "bg-amber-50 border-amber-100";
-    case "expert":
-      return "bg-violet-50 border-violet-100";
-    case "foundation":
-      return "bg-rose-50 border-rose-100";
-    case "state":
-      return "bg-sky-50 border-sky-100";
-    default:
-      return "bg-slate-50 border-slate-100";
+      return <Briefcase className={iconClass} />;
   }
 };
 
@@ -83,23 +63,23 @@ const ProfileDetails = ({ title }: ProfileDetailsProps) => {
 
   return (
     <div className="w-full flex flex-col gap-2">
-      {/* Accordion Trigger */}
+      {/* Accordion Trigger (Solid White, Bold High-Contrast Classy Trigger) */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl shadow-md hover:shadow-lg hover:from-blue-700 hover:to-indigo-700 transition-all text-white font-medium text-sm group"
+        className="w-full flex items-center justify-between px-4 py-3 bg-white text-black border border-white hover:bg-neutral-100 transition-all font-bold text-xs tracking-wider uppercase group rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.05)]"
       >
         <span className="flex items-center gap-2">
-          <Award className="w-4 h-4 animate-pulse" />
+          <Award className="w-4 h-4" />
           {title}
         </span>
-        <span className="flex items-center gap-1.5">
-          <span className="text-[10px] bg-white/20 px-2 py-0.5 rounded-full font-bold">
+        <span className="flex items-center gap-2">
+          <span className="text-[10px] bg-black/10 border border-black/5 px-2 py-0.5 rounded font-bold uppercase tracking-wider text-black/85">
             {credentials.length} Items
           </span>
           {isOpen ? (
-            <ChevronUp className="w-4 h-4 transition-transform duration-300" />
+            <ChevronUp className="w-4 h-4 transition-transform duration-300 text-black" />
           ) : (
-            <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+            <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5 text-black" />
           )}
         </span>
       </button>
@@ -110,21 +90,17 @@ const ProfileDetails = ({ title }: ProfileDetailsProps) => {
           isOpen ? "max-h-[500px] opacity-100 mt-1" : "max-h-0 opacity-0 pointer-events-none"
         }`}
       >
-        <div className="flex flex-col gap-2 max-h-[380px] overflow-y-auto pr-1 py-1 scrollbar-thin">
+        <div className="flex flex-col gap-2 max-h-[380px] overflow-y-auto pr-1 py-1 scrollbar-thin scrollbar-thumb-white/10">
           {credentials.map((cred, idx) => (
             <div
               key={idx}
-              className="flex items-start gap-3 p-3 bg-white border border-slate-100 rounded-lg shadow-sm hover:shadow-md hover:border-slate-200 transition-all group"
+              className="flex items-start gap-3 p-3 bg-neutral-900/60 border border-white/5 rounded-lg shadow-sm hover:border-white/10 hover:bg-neutral-900/80 transition-all group"
             >
-              <div
-                className={`flex items-center justify-center p-2 rounded-lg border shrink-0 ${getBgColor(
-                  cred.category
-                )}`}
-              >
+              <div className="flex items-center justify-center p-2 rounded bg-white/5 border border-white/10 shrink-0">
                 {getIcon(cred.category)}
               </div>
               <div className="flex flex-col justify-center min-w-0 py-0.5">
-                <span className="text-xs font-semibold text-slate-700 break-words leading-tight group-hover:text-slate-900 transition-colors">
+                <span className="text-xs font-semibold text-neutral-300 break-words leading-tight group-hover:text-white transition-colors">
                   {cred.role}
                 </span>
               </div>
