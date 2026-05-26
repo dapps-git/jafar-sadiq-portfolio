@@ -66,14 +66,14 @@ const socialGroups: SocialGroup[] = [
 
 const SocialMediaGroups = () => {
   return (
-    <div className="w-full flex flex-col gap-2.5">
+    <div className="w-full flex flex-col gap-2">
       {socialGroups.map((group) => (
         <div
           key={group.name}
-          className="flex items-center justify-between w-full px-4 py-3 rounded-lg border border-white/10 bg-neutral-900/70 shadow-lg backdrop-blur-sm transition-all hover:border-white/20"
+          className="flex items-center justify-between w-full px-4 py-3 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-md hover:border-slate-200 transition-all"
         >
           {/* Group Name */}
-          <h3 className="text-[10px] font-bold text-white tracking-widest uppercase flex-1">
+          <h3 className="text-xs font-bold text-slate-800 tracking-widest uppercase flex-1">
             {group.name}
           </h3>
           {/* Social Links Icons */}
@@ -84,7 +84,7 @@ const SocialMediaGroups = () => {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-7 h-7 rounded text-neutral-400 hover:text-white hover:bg-white/10 border border-transparent hover:border-white/10 transition-all hover:scale-110"
+                className="flex items-center justify-center w-7 h-7 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all hover:scale-110"
                 title={link.platform}
                 aria-label={link.platform}
               >
