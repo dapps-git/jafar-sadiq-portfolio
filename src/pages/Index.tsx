@@ -10,7 +10,7 @@ const phones = [
 ];
 
 const descriptionText =
-  "A dedicated mentor and career guidance professional with extensive experience in student counselling, psychometric assessment interpretation, leadership development, and educational consulting. Actively associated with academic, social, and humanitarian organizations across Kerala in various leadership and advisory roles.";
+  "A dedicated mentor and career guidance professional with extensive experience in student counselling,Psychometric assessment interpretation, leadership development, and educational consulting. Actively associated with academic, social, and humanitarian organizations across Kerala in various leadership and advisory roles.";
 
 const Index = () => {
   return (
