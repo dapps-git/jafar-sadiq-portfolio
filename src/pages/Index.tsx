@@ -30,10 +30,10 @@ const bubbles = [
 const Index = () => {
   return (
     <div className="animated-bg min-h-screen w-full relative flex flex-col items-center justify-start overflow-hidden">
-      {/* Animated floating orbs */}
-      <div className="orb-1 absolute top-[-5%] left-[-10%] w-[450px] h-[450px] bg-rose-300/45 rounded-full pointer-events-none" />
-      <div className="orb-2 absolute bottom-[-10%] right-[-10%] w-[420px] h-[420px] bg-blue-400/30 rounded-full pointer-events-none" />
-      <div className="orb-3 absolute top-[35%] right-[5%] w-[300px] h-[300px] bg-indigo-300/30 rounded-full pointer-events-none" />
+      {/* Animated floating orbs (Luxurious champagne/silver/gold soft shimmers) */}
+      <div className="orb-1 absolute top-[-5%] left-[-10%] w-[400px] h-[400px] bg-amber-100/5 rounded-full pointer-events-none" />
+      <div className="orb-2 absolute bottom-[-10%] right-[-10%] w-[380px] h-[380px] bg-white/5 rounded-full pointer-events-none" />
+      <div className="orb-3 absolute top-[35%] right-[5%] w-[260px] h-[260px] bg-amber-600/5 rounded-full pointer-events-none" />
 
       {/* Dynamic Rising Bubbles Effect */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden z-0">
@@ -52,21 +52,21 @@ const Index = () => {
         ))}
       </div>
 
-      {/* Subtle dot-grid texture */}
+      {/* Subtle silver dot-grid texture */}
       <div
-        className="absolute inset-0 pointer-events-none opacity-[0.35]"
+        className="absolute inset-0 pointer-events-none opacity-[0.07]"
         style={{
-          backgroundImage: `radial-gradient(#93c5fd 1px, transparent 1px)`,
-          backgroundSize: "22px 22px",
+          backgroundImage: `radial-gradient(#ffffff 1px, transparent 1px)`,
+          backgroundSize: "24px 24px",
         }}
       />
 
       {/* Decorative top arc line */}
-      <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-blue-400/60 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-[1.5px] bg-gradient-to-r from-transparent via-white/20 to-transparent" />
 
       {/* === CONTENT CARD === */}
       <div className="relative z-10 w-full flex flex-col items-center justify-start px-4 py-10">
-        <div className="w-full max-w-sm flex flex-col items-center gap-5">
+        <div className="w-full max-w-sm flex flex-col items-center gap-2">
 
           {/* Profile Header (Avatar, Name, Designation) */}
           <div className="w-full animate-entrance delay-1">
@@ -98,7 +98,7 @@ const Index = () => {
 
           {/* Premium Subtle Footer */}
           <div className="w-full text-center animate-entrance" style={{ animationDelay: "850ms" }}>
-            <p className="text-[10px] font-semibold text-slate-400 tracking-widest mt-4 uppercase">
+            <p className="text-[9px] font-bold text-neutral-500 tracking-widest mt-6 uppercase">
               Powered by Crevionads LLP
             </p>
           </div>
