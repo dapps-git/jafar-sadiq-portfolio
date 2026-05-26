@@ -83,3 +83,129 @@
     font-family: 'DM Sans', sans-serif;
   }
 }
+
+/* === Animated Light Sky Blue Theme === */
+@keyframes float-orb-1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(40px, -50px) scale(1.15);
+  }
+}
+@keyframes float-orb-2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(-50px, 40px) scale(1.2);
+  }
+}
+@keyframes float-orb-3 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  50% {
+    transform: translate(30px, 30px) scale(0.9);
+  }
+}
+@keyframes sky-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-bg {
+  background: linear-gradient(135deg, #fff1f2, #f5e6fa, #e0f2fe, #bae6fd, #fff1f2);
+  background-size: 300% 300%;
+  animation: sky-flow 12s ease-in-out infinite;
+  position: relative;
+  transition: background 1s ease;
+}
+
+.orb-1 {
+  animation: float-orb-1 14s ease-in-out infinite;
+  filter: blur(90px);
+  will-change: transform;
+}
+.orb-2 {
+  animation: float-orb-2 18s ease-in-out infinite;
+  filter: blur(90px);
+  will-change: transform;
+}
+.orb-3 {
+  animation: float-orb-3 22s ease-in-out infinite;
+  filter: blur(90px);
+  will-change: transform;
+}
+
+/* === Rising Bubbles Particle Animation === */
+@keyframes rise-bubble {
+  0% {
+    transform: translateY(20vh) scale(0.5);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: translateY(-120vh) scale(1.1);
+    opacity: 0;
+  }
+}
+
+@keyframes bubble-sway {
+  0%, 100% {
+    margin-left: 0px;
+  }
+  50% {
+    margin-left: 25px;
+  }
+}
+
+.bubble {
+  position: absolute;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.7) 0%, rgba(186, 230, 253, 0.4) 60%, rgba(147, 197, 253, 0.25) 100%);
+  border-radius: 50%;
+  box-shadow: inset -2px -2px 6px rgba(255, 255, 255, 0.6), 0 4px 10px rgba(147, 197, 253, 0.2);
+  pointer-events: none;
+  animation: rise-bubble 15s linear infinite, bubble-sway 4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* === Gorgeous Cascading Entrance Animations === */
+@keyframes card-entrance {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-entrance {
+  opacity: 0;
+  animation: card-entrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.delay-1 { animation-delay: 100ms; }
+.delay-2 { animation-delay: 250ms; }
+.delay-3 { animation-delay: 400ms; }
+.delay-4 { animation-delay: 550ms; }
+.delay-5 { animation-delay: 700ms; }
+
+
+
+
