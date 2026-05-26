@@ -37,24 +37,44 @@ const credentials: CredentialItem[] = [
 ];
 
 const getIcon = (category: string) => {
-  const iconClass = "w-4 h-4 text-neutral-200";
   switch (category) {
     case "counselor":
-      return <Compass className={iconClass} />;
+      return <Compass className="w-4 h-4 text-emerald-600" />;
     case "board":
-      return <Users className={iconClass} />;
+      return <Users className="w-4 h-4 text-indigo-600" />;
     case "academic":
-      return <GraduationCap className={iconClass} />;
+      return <GraduationCap className="w-4 h-4 text-blue-600" />;
     case "management":
-      return <Building className={iconClass} />;
+      return <Building className="w-4 h-4 text-amber-600" />;
     case "expert":
-      return <LineChart className={iconClass} />;
+      return <LineChart className="w-4 h-4 text-violet-600" />;
     case "foundation":
-      return <Heart className={iconClass} />;
+      return <Heart className="w-4 h-4 text-rose-600" />;
     case "state":
-      return <Shield className={iconClass} />;
+      return <Shield className="w-4 h-4 text-sky-600" />;
     default:
-      return <Briefcase className={iconClass} />;
+      return <Briefcase className="w-4 h-4 text-slate-600" />;
+  }
+};
+
+const getBgColor = (category: string) => {
+  switch (category) {
+    case "counselor":
+      return "bg-emerald-50 border-emerald-100";
+    case "board":
+      return "bg-indigo-50 border-indigo-100";
+    case "academic":
+      return "bg-blue-50 border-blue-100";
+    case "management":
+      return "bg-amber-50 border-amber-100";
+    case "expert":
+      return "bg-violet-50 border-violet-100";
+    case "foundation":
+      return "bg-rose-50 border-rose-100";
+    case "state":
+      return "bg-sky-50 border-sky-100";
+    default:
+      return "bg-slate-50 border-slate-100";
   }
 };
 
@@ -63,44 +83,44 @@ const ProfileDetails = ({ title }: ProfileDetailsProps) => {
 
   return (
     <div className="w-full flex flex-col gap-2">
-      {/* Accordion Trigger (Solid White, Bold High-Contrast Classy Trigger) */}
+      {/* Accordion Trigger */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-full flex items-center justify-between px-4 py-3 bg-white text-black border border-white hover:bg-neutral-100 transition-all font-bold text-xs tracking-wider uppercase group rounded-lg shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+        className="w-full flex items-center justify-between px-4 py-3 bg-gradient-to-r from-sky-400 to-blue-500 rounded-xl shadow-md hover:shadow-lg hover:from-sky-500 hover:to-blue-600 transition-all text-white font-medium text-sm group"
       >
         <span className="flex items-center gap-2">
-          <Award className="w-4 h-4" />
+          <Award className="w-4 h-4 animate-pulse" />
           {title}
         </span>
-        <span className="flex items-center gap-2">
-          <span className="text-[10px] bg-black/10 border border-black/5 px-2 py-0.5 rounded font-bold uppercase tracking-wider text-black/85">
-            {credentials.length} Items
-          </span>
+        <span className="flex items-center gap-1.5">
           {isOpen ? (
-            <ChevronUp className="w-4 h-4 transition-transform duration-300 text-black" />
+            <ChevronUp className="w-4 h-4 transition-transform duration-300" />
           ) : (
-            <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5 text-black" />
+            <ChevronDown className="w-4 h-4 transition-transform duration-300 group-hover:translate-y-0.5" />
           )}
         </span>
       </button>
 
       {/* Accordion Content with smooth height transition */}
       <div
-        className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[500px] opacity-100 mt-1" : "max-h-0 opacity-0 pointer-events-none"
-        }`}
+        className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[500px] opacity-100 mt-1" : "max-h-0 opacity-0 pointer-events-none"
+          }`}
       >
-        <div className="flex flex-col gap-2 max-h-[380px] overflow-y-auto pr-1 py-1 scrollbar-thin scrollbar-thumb-white/10">
+        <div className="flex flex-col gap-2 max-h-[380px] overflow-y-auto pr-1 py-1 scrollbar-thin">
           {credentials.map((cred, idx) => (
             <div
               key={idx}
-              className="flex items-start gap-3 p-3 bg-neutral-900/60 border border-white/5 rounded-lg shadow-sm hover:border-white/10 hover:bg-neutral-900/80 transition-all group"
+              className="flex items-start gap-3 p-3 bg-white border border-slate-100 rounded-lg shadow-sm hover:shadow-md hover:border-slate-200 transition-all group"
             >
-              <div className="flex items-center justify-center p-2 rounded bg-white/5 border border-white/10 shrink-0">
+              <div
+                className={`flex items-center justify-center p-2 rounded-lg border shrink-0 ${getBgColor(
+                  cred.category
+                )}`}
+              >
                 {getIcon(cred.category)}
               </div>
               <div className="flex flex-col justify-center min-w-0 py-0.5">
-                <span className="text-xs font-semibold text-neutral-300 break-words leading-tight group-hover:text-white transition-colors">
+                <span className="text-xs font-semibold text-slate-700 break-words leading-tight group-hover:text-slate-900 transition-colors">
                   {cred.role}
                 </span>
               </div>

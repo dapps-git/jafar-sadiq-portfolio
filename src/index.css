@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,66 +6,66 @@
 
 @layer base {
   :root {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 100%;
+    --foreground: 0 0% 12%;
 
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 12%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 12%;
 
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 4%;
+    --primary: 0 0% 12%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 94%;
+    --secondary-foreground: 0 0% 12%;
 
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
+    --muted: 0 0% 94%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 98%;
+    --accent: 0 0% 94%;
+    --accent-foreground: 0 0% 12%;
 
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 80%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 12%;
 
-    --radius: 0.375rem;
+    --radius: 0.5rem;
 
-    --link-bg: 0 0% 10%;
-    --link-border: 0 0% 18%;
-    --link-hover: 0 0% 14%;
-    --verified: 210 100% 65%;
+    --link-bg: 0 0% 100%;
+    --link-border: 0 0% 88%;
+    --link-hover: 0 0% 96%;
+    --verified: 210 100% 50%;
   }
 
   .dark {
-    --background: 0 0% 4%;
-    --foreground: 0 0% 98%;
-    --card: 0 0% 8%;
-    --card-foreground: 0 0% 98%;
-    --popover: 0 0% 8%;
-    --popover-foreground: 0 0% 98%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 4%;
-    --secondary: 0 0% 12%;
-    --secondary-foreground: 0 0% 98%;
-    --muted: 0 0% 12%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 0 0% 12%;
-    --accent-foreground: 0 0% 98%;
+    --background: 0 0% 8%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 12%;
+    --popover-foreground: 0 0% 95%;
+    --primary: 0 0% 95%;
+    --primary-foreground: 0 0% 8%;
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 0 0% 95%;
+    --muted: 0 0% 16%;
+    --muted-foreground: 0 0% 60%;
+    --accent: 0 0% 16%;
+    --accent-foreground: 0 0% 95%;
     --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 0 0% 18%;
-    --input: 0 0% 18%;
+    --destructive-foreground: 0 0% 95%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
     --ring: 0 0% 80%;
-    --link-bg: 0 0% 10%;
-    --link-border: 0 0% 18%;
-    --link-hover: 0 0% 14%;
-    --verified: 210 100% 65%;
+    --link-bg: 0 0% 14%;
+    --link-border: 0 0% 22%;
+    --link-hover: 0 0% 18%;
+    --verified: 210 100% 60%;
   }
 }
 
@@ -74,157 +74,13 @@
     @apply border-border;
   }
 
-  html, body {
-    @apply overflow-x-hidden w-full m-0 p-0 bg-[#040404];
+  html,
+  body {
+    @apply overflow-x-hidden w-full;
   }
 
   body {
     @apply bg-background text-foreground font-sans;
-    font-family: 'Montserrat', sans-serif;
-    background-color: #040404;
+    font-family: 'DM Sans', sans-serif;
   }
 }
-
-/* === Animated Black Marble Theme === */
-@keyframes float-orb-1 {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  50% {
-    transform: translate(30px, -40px) scale(1.1);
-  }
-}
-@keyframes float-orb-2 {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  50% {
-    transform: translate(-40px, 30px) scale(1.15);
-  }
-}
-@keyframes float-orb-3 {
-  0%, 100% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  50% {
-    transform: translate(25px, 25px) scale(0.95);
-  }
-}
-@keyframes sky-flow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-.animated-bg {
-  background-color: #040404;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-}
-
-/* Luxury black marble background image overlay */
-.animated-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  opacity: 0.28; /* perfect subtle visibility for professional gold & white marble veins */
-  pointer-events: none;
-  background-image: url("/black_marble_bg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: 0;
-}
-
-.orb-1 {
-  animation: float-orb-1 14s ease-in-out infinite;
-  filter: blur(120px);
-  will-change: transform;
-  opacity: 0.035;
-  background-color: #fef3c7; /* amber-100 */
-}
-.orb-2 {
-  animation: float-orb-2 18s ease-in-out infinite;
-  filter: blur(120px);
-  will-change: transform;
-  opacity: 0.045;
-  background-color: #ffffff;
-}
-.orb-3 {
-  animation: float-orb-3 22s ease-in-out infinite;
-  filter: blur(120px);
-  will-change: transform;
-  opacity: 0.025;
-  background-color: #d97706; /* amber-600 */
-}
-
-/* === Slow-Drifting Dust Particles (Standard Classy Shimmer) === */
-@keyframes drift-particle {
-  0% {
-    transform: translateY(10vh) translateX(0) scale(1);
-    opacity: 0;
-  }
-  15% {
-    opacity: 0.55;
-  }
-  85% {
-    opacity: 0.55;
-  }
-  100% {
-    transform: translateY(-110vh) translateX(15px) scale(0.9);
-    opacity: 0;
-  }
-}
-
-@keyframes particle-sway {
-  0%, 100% {
-    margin-left: 0px;
-  }
-  50% {
-    margin-left: 10px;
-  }
-}
-
-.dust-particle {
-  position: absolute;
-  bottom: 0;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.75) 0%, rgba(251, 191, 36, 0.3) 50%, rgba(255, 255, 255, 0) 100%); /* Elegant gold/silver micro-light */
-  border-radius: 50%;
-  pointer-events: none;
-  animation: drift-particle 28s linear infinite, particle-sway 6s ease-in-out infinite;
-  will-change: transform, opacity;
-}
-
-/* === Gorgeous Cascading Entrance Animations === */
-@keyframes card-entrance {
-  0% {
-    opacity: 0;
-    transform: translateY(15px) scale(0.98);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
-.animate-entrance {
-  opacity: 0;
-  animation: card-entrance 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-.delay-1 { animation-delay: 80ms; }
-.delay-2 { animation-delay: 180ms; }
-.delay-3 { animation-delay: 280ms; }
-.delay-4 { animation-delay: 380ms; }
-.delay-5 { animation-delay: 480ms; }
-
-
-
-
