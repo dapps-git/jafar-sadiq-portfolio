@@ -13,33 +13,6 @@ interface SocialGroup {
 
 const socialGroups: SocialGroup[] = [
   {
-    name: "SKIOLO",
-    links: [
-      {
-        platform: "Website",
-        url: "https://www.skiolo.com",
-        icon: <Globe className="w-4 h-4" />,
-      },
-     {
-        platform: "You Tube",
-        url: "https://www.youtube.com/@skiolo_career_academy",
-        icon: <Youtube className="w-4 h-4" />,
-      },
-      {
-        platform: "Facebook",
-        url: "https://www.facebook.com/share/1CfpeDmRHy/",
-        icon: <Facebook className="w-4 h-4" />,
-      },
-      {
-        platform: "Instagram",
-        url: "https://www.instagram.com/skiolo_career_academy?igsh=MWdpMnU2Ym1scnBiNw==",
-        icon: <Instagram className="w-4 h-4" />,
-      },
-    ],
-  },
- 
-
-  {
     name: "JAFAR SADIQ",
     links: [
       {
@@ -64,29 +37,54 @@ const socialGroups: SocialGroup[] = [
       },
     ],
   },
+  {
+    name: "SKIOLO",
+    links: [
+      {
+        platform: "Website",
+        url: "https://www.skiolo.com",
+        icon: <Globe className="w-4 h-4" />,
+      },
+      {
+        platform: "You Tube",
+        url: "https://www.youtube.com/@skiolo_career_academy",
+        icon: <Youtube className="w-4 h-4" />,
+      },
+      {
+        platform: "Facebook",
+        url: "https://www.facebook.com/share/1CfpeDmRHy/",
+        icon: <Facebook className="w-4 h-4" />,
+      },
+      {
+        platform: "Instagram",
+        url: "https://www.instagram.com/skiolo_career_academy?igsh=MWdpMnU2Ym1scnBiNw==",
+        icon: <Instagram className="w-4 h-4" />,
+      },
+    ],
+  },
 ];
 
-const  SocialMediaGroups = () => {
+const SocialMediaGroups = () => {
   return (
-    <div className="w-full flex flex-col gap-2">
+    <div className="w-full flex flex-col gap-2.5">
       {socialGroups.map((group) => (
         <div
           key={group.name}
-          className="flex items-center justify-between w-full px-4 py-3 bg-slate-200 rounded-lg shadow-sm hover:shadow-md transition-shadow"
+          className="flex items-center justify-between w-full px-4 py-3 rounded-xl border border-slate-100 bg-white shadow-sm hover:shadow-md hover:border-slate-200 transition-all"
         >
-          {/* Business Name */}
-          <h3 className="text-sm font-bold text-gray-900 flex-1">
+          {/* Group Name */}
+          <h3 className="text-xs font-bold text-slate-800 tracking-widest uppercase flex-1">
             {group.name}
           </h3>
           {/* Social Links Icons */}
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             {group.links.map((link) => (
               <a
                 key={link.platform}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center w-6 h-6 text-gray-700 hover:text-gray-900 transition-colors"
+                className="flex items-center justify-center w-7 h-7 rounded-lg text-slate-400 hover:text-blue-600 hover:bg-slate-50 border border-transparent hover:border-slate-100 transition-all hover:scale-110"
                 title={link.platform}
                 aria-label={link.platform}
               >
