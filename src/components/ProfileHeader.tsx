@@ -9,15 +9,15 @@ interface ProfileHeaderProps {
 }
 
 const galleryImages = [
-  { url: "/JAHFAR.jpg.jpeg",             label: "Photo 1" },
-  { url: "/JAHFAR%20%20%20%20.jpg.jpeg", label: "Photo 2" },
-  { url: "/Jahfar%20Sir.png",            label: "Photo 3" },
+  { url: "/JAHFAR.jpg.jpeg", label: "Photo 1" },
+  { url: "/JAHFAR.jpg", label: "Photo 2" },
+  { url: "/JahfarSir.png", label: "Photo 3" },
 ];
 
 const ProfileHeader = ({ name, designation }: ProfileHeaderProps) => {
   const [lightbox, setLightbox] = useState<null | "avatar" | "gallery">(null);
-  const [idx, setIdx]           = useState(0);
-  const [busy, setBusy]         = useState(false);
+  const [idx, setIdx] = useState(0);
+  const [busy, setBusy] = useState(false);
   const [imgLoaded, setImgLoaded] = useState(false);
 
   useEffect(() => {
@@ -28,10 +28,10 @@ const ProfileHeader = ({ name, designation }: ProfileHeaderProps) => {
     setBusy(true);
     try {
       const encodedSrc = encodeURI(src);
-      const res  = await fetch(encodedSrc);
+      const res = await fetch(encodedSrc);
       const blob = await res.blob();
-      const url  = URL.createObjectURL(blob);
-      const a    = Object.assign(document.createElement("a"), { href: url, download: filename });
+      const url = URL.createObjectURL(blob);
+      const a = Object.assign(document.createElement("a"), { href: url, download: filename });
       document.body.appendChild(a);
       a.click();
       a.remove();
@@ -174,9 +174,8 @@ const ProfileHeader = ({ name, designation }: ProfileHeaderProps) => {
                     <button
                       key={i}
                       onClick={() => setIdx(i)}
-                      className={`w-12 h-15 rounded overflow-hidden border transition-all ${
-                        i === idx ? "border-white scale-105" : "border-white/10 opacity-40 hover:opacity-100"
-                      }`}
+                      className={`w-12 h-15 rounded overflow-hidden border transition-all ${i === idx ? "border-white scale-105" : "border-white/10 opacity-40 hover:opacity-100"
+                        }`}
                     >
                       <img src={img.url} className="w-full h-full object-cover" alt="" />
                     </button>
