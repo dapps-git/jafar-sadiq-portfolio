@@ -123,23 +123,22 @@
 }
 
 .animated-bg {
-  background: linear-gradient(135deg, #050505, #111111, #080808, #181818, #050505);
-  background-size: 300% 300%;
-  animation: sky-flow 22s ease-in-out infinite;
+  background-color: #040404;
   position: relative;
   min-height: 100vh;
   width: 100%;
 }
 
-/* Handcrafted organic marble veins overlay */
+/* Luxury black marble background image overlay */
 .animated-bg::before {
   content: "";
   position: absolute;
   inset: 0;
-  opacity: 0.08; /* subtle and elegant */
+  opacity: 0.28; /* perfect subtle visibility for professional gold & white marble veins */
   pointer-events: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 1200'%3E%3Cpath d='M0,150 Q300,120 450,280 T900,180 T1200,350 M0,600 Q250,550 500,750 T1000,550 T1200,800 M200,0 Q350,400 250,700 T550,1200 M800,0 Q950,450 850,750 T1150,1200' fill='none' stroke='%23ffffff' stroke-width='1.5' opacity='0.7'/%3E%3Cpath d='M50,100 Q200,250 350,150 T750,400 T1150,200 M100,800 Q400,700 600,900 T1100,750' fill='none' stroke='%23ffffff' stroke-width='0.8' opacity='0.4'/%3E%3C/svg%3E");
+  background-image: url("/black_marble_bg.png");
   background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
   z-index: 0;
 }
@@ -166,41 +165,40 @@
   background-color: #d97706; /* amber-600 */
 }
 
-/* === Rising Bubbles Particle Animation (Classy Micro-pearls) === */
-@keyframes rise-bubble {
+/* === Slow-Drifting Dust Particles (Standard Classy Shimmer) === */
+@keyframes drift-particle {
   0% {
-    transform: translateY(20vh) scale(0.5);
+    transform: translateY(10vh) translateX(0) scale(1);
     opacity: 0;
   }
   15% {
-    opacity: 0.35;
+    opacity: 0.55;
   }
-  90% {
-    opacity: 0.2;
+  85% {
+    opacity: 0.55;
   }
   100% {
-    transform: translateY(-120vh) scale(1);
+    transform: translateY(-110vh) translateX(15px) scale(0.9);
     opacity: 0;
   }
 }
 
-@keyframes bubble-sway {
+@keyframes particle-sway {
   0%, 100% {
     margin-left: 0px;
   }
   50% {
-    margin-left: 15px;
+    margin-left: 10px;
   }
 }
 
-.bubble {
+.dust-particle {
   position: absolute;
   bottom: 0;
-  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0.05) 50%, rgba(255, 255, 255, 0) 100%);
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.75) 0%, rgba(251, 191, 36, 0.3) 50%, rgba(255, 255, 255, 0) 100%); /* Elegant gold/silver micro-light */
   border-radius: 50%;
-  box-shadow: inset -1px -1px 3px rgba(255, 255, 255, 0.15), 0 2px 6px rgba(255, 255, 255, 0.03);
   pointer-events: none;
-  animation: rise-bubble 15s linear infinite, bubble-sway 4s ease-in-out infinite;
+  animation: drift-particle 28s linear infinite, particle-sway 6s ease-in-out infinite;
   will-change: transform, opacity;
 }
 
