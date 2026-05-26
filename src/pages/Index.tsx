@@ -14,9 +14,23 @@ const descriptionText =
 
 const Index = () => {
   return (
-    <div className="min-h-screen w-full relative flex flex-col items-center justify-start bg-slate-50/50">
+    <div className="min-h-screen w-full relative flex flex-col items-center justify-start bg-[#f0f9ff] overflow-hidden">
+      {/* Background radial soft glows (Sky Blue gradient effect) */}
+      <div className="absolute top-[-5%] left-[-10%] w-[450px] h-[450px] bg-sky-200/40 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[400px] h-[400px] bg-blue-100/50 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-[30%] right-[10%] w-[350px] h-[350px] bg-sky-100/40 rounded-full blur-3xl pointer-events-none" />
+
+      {/* Subtle modern dot grid texture */}
+      <div
+        className="absolute inset-0 pointer-events-none opacity-[0.6]"
+        style={{
+          backgroundImage: `radial-gradient(#bae6fd 1.2px, transparent 1.2px)`,
+          backgroundSize: "20px 20px",
+        }}
+      />
+
       {/* Decorative top arc line */}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-blue-500/40 to-transparent" />
 
       {/* === CONTENT CARD === */}
       <div className="relative z-10 w-full flex flex-col items-center justify-start px-4 py-10">
