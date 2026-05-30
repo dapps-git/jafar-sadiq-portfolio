@@ -42,7 +42,7 @@ const Index = () => {
           {/* Profile Header (Avatar, Name, Designation) */}
           <ProfileHeader
             name="Mr. Jafar Sadiq Puliyakkode"
-            designation="Career Counsellor | Life Coach | Educator"
+            designation="Career Counsellor | Parenting Coach | Educator"
           />
 
           {/* Interactive Collapsible Professional Credentials */}

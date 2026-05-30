@@ -10,7 +10,6 @@ interface ProfileDetailsProps {
 }
 
 const credentials = [
-  "Career Counsellor & Life Coach",
   "Directorate Board Member – LIFE Institute",
   "Academic Council Member – Izzath Knowledge Campus",
   "Academic Council Member – Qabas Life School",
@@ -20,7 +19,7 @@ const credentials = [
   "General Secretary – IMAGE Human Care Foundation",
   "Senior Resource Person – WEFI Kerala",
   "Educator – CIGI Calicut",
-  "State Directorate Member – Zuhra",
+  "State Directorate Member – Zahra",
 ];
 
 const ProfileDetails = ({ title }: ProfileDetailsProps) => {
