@@ -1,18 +1,18 @@
-import { useState } from "react";
+import { useState, ReactNode } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 interface ProfileDescriptionProps {
-  description: string;
+  description: ReactNode;
 }
 
 const ProfileDescription = ({ description }: ProfileDescriptionProps) => {
   const [isExpanded, setIsExpanded] = useState(false);
 
   return (
-    <div className="w-full rounded-xl border border-slate-100 bg-white shadow-sm px-4 py-3.5 transition-all">
+    <div className="w-full rounded-xl border border-slate-100 bg-white shadow-sm px-3 py-3.5 transition-all">
       <div className="relative overflow-hidden transition-all duration-300">
         <p
-          className={`text-sm text-slate-600 leading-relaxed font-normal transition-all duration-300 ${isExpanded ? "" : "line-clamp-2"
+          className={`text-xs text-slate-600 leading-[1.6] font-normal text-justify transition-all duration-300 ${isExpanded ? "" : "line-clamp-2"
             }`}
         >
           {description}
