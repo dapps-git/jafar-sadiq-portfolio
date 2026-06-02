@@ -12,7 +12,7 @@ const ProfileDescription = ({ description }: ProfileDescriptionProps) => {
     <div className="w-full rounded-xl border border-slate-100 bg-white shadow-sm px-3 py-3.5 transition-all">
       <div className="relative overflow-hidden transition-all duration-300">
         <p
-          className={`text-xs text-slate-600 leading-[1.6] font-normal text-left sm:text-justify transition-all duration-300 ${isExpanded ? "" : "line-clamp-2"
+          className={`text-xs text-slate-600 leading-[1.6] font-normal text-justify hyphens-auto break-words transition-all duration-300 ${isExpanded ? "" : "line-clamp-2"
             }`}
         >
           {description}
