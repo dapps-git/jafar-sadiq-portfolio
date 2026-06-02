@@ -10,7 +10,7 @@ interface ProfileDetailsProps {
 }
 
 const credentials = [
-  "Directorate Board Member – LIFE Institute",
+  "Member, Board of Directors – LIFE Institute",
   "Academic Council Member – Izzath Knowledge Campus",
   "Academic Council Member – Qabas Life School",
   "Managing Committee Member – Al Fouz School",
@@ -47,9 +47,8 @@ const ProfileDetails = ({ title }: ProfileDetailsProps) => {
 
       {/* Accordion Content with smooth height transition */}
       <div
-        className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[500px] opacity-100 mt-1" : "max-h-0 opacity-0 pointer-events-none"
-        }`}
+        className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[500px] opacity-100 mt-1" : "max-h-0 opacity-0 pointer-events-none"
+          }`}
       >
         <div className="flex flex-col gap-2 max-h-[380px] overflow-y-auto pr-1 py-1 scrollbar-thin">
           {credentials.map((role, idx) => (

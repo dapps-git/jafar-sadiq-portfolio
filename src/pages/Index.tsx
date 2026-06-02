@@ -11,8 +11,7 @@ const phones = [
 ];
 
 const descriptionText =
-  "A dedicated mentor and career guidance professional with extensive experience in student counselling,Psychometric assessment interpretation, leadership development, and educational consulting. Actively associated with academic, social, and humanitarian organizations across Kerala in various leadership and advisory roles.";
-
+  "A Passionate Educationist and Career Guidance professional with extensive experience in counseling students, psychometric Assessment interpretation, leadership development, and educational consulting. Actively associated with academic, social, and humanitarian organizations across Kerala in multiple capacities."
 const Index = () => {
   return (
     <div className="min-h-screen w-full relative flex flex-col items-center justify-start bg-gradient-to-b from-[#fbf2f7] via-[#f3f9fe] to-[#e6f4fe] overflow-hidden">
