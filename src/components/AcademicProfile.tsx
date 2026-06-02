@@ -5,7 +5,6 @@ const formalQualifications = [
   "M.A. Islamic Studies — Jamia Hamdard, New Delhi",
   "M.A. Urdu — Sree Shankaracharya University of Sanskrit, Kaladi",
   "M.A. Sociology — IGNOU, New Delhi",
-  "B.A. Sociology — University of Calicut",
   "D.El.Ed (Diploma in Elementary Education) — Government Teacher Training Institute, Kozhikode",
   "DCGC (Diploma in Career Guidance & Counselling) — CIGI, Calicut",
 ];
@@ -41,9 +40,8 @@ const AcademicProfile = () => {
 
       {/* Accordion Content */}
       <div
-        className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${
-          isOpen ? "max-h-[600px] opacity-100 mt-1" : "max-h-0 opacity-0 pointer-events-none"
-        }`}
+        className={`w-full overflow-hidden transition-all duration-300 ease-in-out ${isOpen ? "max-h-[600px] opacity-100 mt-1" : "max-h-0 opacity-0 pointer-events-none"
+          }`}
       >
         <div className="flex flex-col gap-2 max-h-[480px] overflow-y-auto pr-1 py-1 scrollbar-thin">
 
