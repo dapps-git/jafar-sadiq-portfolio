@@ -11,9 +11,7 @@ const phones = [
 ];
 
 const descriptionText = (
-  <>
-    A Passionate Educationist and Career Guidance professional with extensive experience in counseling students, psychometric Assessment interpretation, leadership development, and educational consulting. Actively associated with academic, social, and humanitarian organizations across Kerala in multiple capacities. <strong className="font-bold text-slate-800">Professional Benchmark: 1000+ Students Trained</strong>
-  </>
+  <>A Passionate Educationist and Career Guidance professional with extensive experience in counseling students, psychometric Assessment interpretation, leadership development, and educational consulting. Actively associated with academic, social, and humanitarian organizations across Kerala in multiple capacities. <strong className="font-bold text-slate-800">Professional Benchmark: 1000+ Students Trained</strong></>
 );
 const Index = () => {
   return (
