@@ -4,6 +4,7 @@ import SocialMediaGroups from "@/components/SocialMediaGroups";
 import ProfileDescription from "@/components/ProfileDescription";
 import ProfileDetails from "@/components/ProfileDetails";
 import AcademicProfile from "@/components/AcademicProfile";
+import DetailedBiography from "@/components/DetailedBiography";
 
 const phones = [
   { label: "Personal Number", number: "+91 9633872234" },
@@ -50,6 +51,9 @@ const Index = () => {
 
           {/* Interactive Collapsible Academic Credentials */}
           <AcademicProfile />
+
+          {/* Interactive Collapsible Detailed Profile */}
+          <DetailedBiography />
 
           {/* Collapsible 2-line Description with Read More */}
           <ProfileDescription description={descriptionText} />

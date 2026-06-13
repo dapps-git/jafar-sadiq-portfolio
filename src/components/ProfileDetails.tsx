@@ -15,6 +15,7 @@ const credentials = [
   "Academic Council Member – Qabas Life School",
   "Managing Committee Member – Al Fouz School",
   "Chief Career Counsellor – LIFE Institute",
+  "Faculty – ZeeQue Preschool Network",
   "Psychometric Test Interpreter – Skiolo Assessment Centre",
   "General Secretary – IMAGE Human Care Foundation",
   "Senior Resource Person – WEFI Kerala",
